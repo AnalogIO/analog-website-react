@@ -1,0 +1,17 @@
+.logo {
+    width: 80px; 
+    height: 40px;
+    left: 0;
+    top: 0;
+    position: absolute;
+    margin: 15px;
+}
+.container {
+    flex:1;
+    flex-direction: column;
+}
+button {
+    background-color: transparent;
+    font-weight: bold;
+    padding: 15px;
+}
