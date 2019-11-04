@@ -15,11 +15,6 @@ class NavigationBar extends React.Component {
                 onClick={() => this.props.changeTab('home')} alt=''
                 style={{filter: this.isSelected('home') ? 'invert(1)' : 'invert(0)'}}/>
                 <button 
-                onClick={() => this.props.changeTab('menu')} 
-                style={{color:this.isSelected('menu') ? 'white' : 'grey'}}>
-                    MENU
-                </button>
-                <button 
                 onClick={() => this.props.changeTab('apply')}
                 style={{color:this.isSelected('apply') ? 'white' : 'grey'}}>
                     APPLY

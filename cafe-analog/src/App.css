@@ -2,10 +2,6 @@
   text-align: center;
 }
 
-.app-link {
-  color: #61dafb;
-}
-
 .background-image {
   left: 0;
   top: 0;
@@ -27,14 +23,7 @@
   background-color: rgb(240, 95, 65);
 }
 .frontpage-menu-content {
-  flex: 1;
   flex-direction: row;
   justify-content: center;
   display: flex;
-}
-
-.blackboard {
-  position: absolute;
-  z-index: -1;
-  -webkit-user-select: none;
 }

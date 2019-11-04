@@ -4,7 +4,6 @@ import './styles/Global.css';
 import NavigationBar from './components/NavigationBar';
 import Background from './data/background.png';
 import Homepage from './components/Homepage';
-import Menupage from './components/Menupage';
 import Applypage from './components/Applypage';
 import Memberspage from './components/Memberspage';
 import Leaderboardpage from './components/Leaderboardpage';
@@ -45,17 +44,17 @@ class App extends React.Component {
 
   getEspressoDrinks = () => {
     var espressoDrinks = this.state.espressoDrinks.map(i => 
-      <p>{genFixedSizeText(i.name, 20) + "\t" + i.single + ",-/" + i.double + ",-"}</p>);
+      <p key={'espresso'+i.name}>{genFixedSizeText(i.name, 20) + "\t" + i.single + ",-/" + i.double + ",-"}</p>);
     return espressoDrinks;
   }
   getNonEspressoDrinks = () => {
     var nonEspressoDrinks = this.state.nonEspressoDrinks.map(i => 
-      <p>{genFixedSizeText(i.name, 20) + "\t" + i.price + ",-"}</p>);
+      <p key={'nonespresso'+i.name}>{genFixedSizeText(i.name, 20) + "\t" + i.price + ",-"}</p>);
     return nonEspressoDrinks;
   }
   getOtherProducts = () => {
     var otherProducts = this.state.other.map(i => 
-      <p>{genFixedSizeText(i.name, 20) + "\t" + i.price + ",-"}</p>);
+      <p key={'other'+i.name}>{genFixedSizeText(i.name, 20) + "\t" + i.price + ",-"}</p>);
     return otherProducts;
   }
 
@@ -66,11 +65,9 @@ class App extends React.Component {
         <header>
           <NavigationBar changeTab={this.changeTab} currentTab={this.state.tab}/>
         </header>
-
         <div className='page-container'>
-          {
+          { 
             (this.state.tab === 'home' && <Homepage/>)                ||
-            (this.state.tab === 'menu' && <Menupage/>)                ||
             (this.state.tab === 'apply' && <Applypage/>)              ||
             (this.state.tab === 'members' && <Memberspage/>)          ||
             (this.state.tab === 'leaderboard' && <Leaderboardpage/>)  ||
