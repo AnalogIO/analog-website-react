@@ -7,7 +7,7 @@ class Applypage extends React.Component {
         return (
             <div>
                 <h1>What is Café Analog?</h1>
-                <text style={{whiteSpace:'pre-line'}}>{
+                <p style={{whiteSpace:'pre-line'}}>{
                     "Analog is ITU’s student-driven,\n" +
                     "non-profit café, serving coffee and tea\n" +
                     "to more than 100 students a day. We’re comprised\n" +
@@ -20,7 +20,7 @@ class Applypage extends React.Component {
                     "but we are at no different level than any\n" +
                     "other volunteer --\n" +
                     "we all started as baristas just like you."
-                }</text>
+                }</p>
                 <h1>What we are expecting from you as a volunteer</h1>
                 <p style={{whiteSpace:'pre-line'}}>{
                     "Keeping a café open from 8-18 every week day is hard work\n" +
