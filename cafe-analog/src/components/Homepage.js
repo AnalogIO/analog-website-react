@@ -23,14 +23,12 @@ class Homepage extends React.Component {
             fetch('https://analogio.dk/publicshiftplanning/api/employees/Analog/' + emp.id, {method: 'GET'}).then(response => {
                 response.json().then(responsejson => {
                 employees.push(responsejson);
-            });
-            }).catch(ex => {
-                console.error('Could not connect to Analog API: ' + ex)
-            });
-            if (i === this.state.shift.checkedInEmployees.length - 1) {
                 this.setState({shiftFetched: true, onShiftEmployees: employees});
                 this.forceUpdate();
-            }
+            });
+        }).catch(ex => {
+            console.error('Could not connect to Analog API: ' + ex)
+        });
         }
     }
 
@@ -83,10 +81,16 @@ class Homepage extends React.Component {
                         <h2>UNTIL {this.state.closingTime}</h2>
                         {this.state.shiftFetched && this.state.onShiftEmployees.length > 0 &&
                         <div>
+                            <br/>
                             <p>ON SHIFT NOW</p>
-                            {this.state.onShiftEmployees.map(emp => {
-                              return <img src={emp.photoRef} width={140} height={200} style={{padding:20}} alt=''/>;
+                            <div style={{flexDirection:'row', display:'flex', justifyContent:'center'}}>
+                                {this.state.onShiftEmployees.map((emp, i) => {
+                                    return  <div style={{border: 'thin solid black', margin:20, backgroundColor:'rgb(0,0,0,0.5)'}}>
+                                                <img src={emp.photoRef} width={120} height={140} style={{padding:5}} alt='' key={i}/>
+                                                <p>{emp.firstName + " " + emp.lastName}</p>
+                                            </div>
                             })}
+                            </div>
                         </div>
                         }
                     </div>

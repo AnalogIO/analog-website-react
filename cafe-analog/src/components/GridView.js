@@ -29,7 +29,7 @@ class GridView extends React.Component {
     j = 0;
     render() {
         return (
-            <div>
+            <div style={{height:'500px', overflowY:'scroll'}}>
                 {
                     this.state.rows.map(row => {
                     return (
@@ -39,7 +39,7 @@ class GridView extends React.Component {
                     );
                     })
                 }
-            </div> 
+            </div>
         );
     }
 }
